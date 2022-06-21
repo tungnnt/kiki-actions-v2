@@ -12,6 +12,10 @@ const STEP_WAIT_FOR_DISPLAY = { VISIBLE: "visible", HIDDEN: "hidden" };
 
 const STEP_CLICK_MOUSE_BUTTON = ["left", "right", "middle", "back", "forward"];
 
+const STEP_SCROLL_DIRECTION = { UP: "up", DOWN: "down" };
+
+const KEY_DEFINITION = require("./key");
+
 const STEP_TYPE = {
   VISIT_AN_URL: "visit-an-url",
   OPEN_A_NEW_TAB: "open-a-new-tab",
@@ -23,6 +27,12 @@ const STEP_TYPE = {
   WAIT_FOR_DURATION: "wait-for-duration",
   CLICK_BY_XPATH: "click-by-xpath",
   CLICK_BY_SELECTOR: "click-by-selector",
+  TYPE_BY_SELECTOR: "type-by-selector",
+  TYPE_BY_XPATH: "type-by-xpath",
+  SCROLL_BY_XPATH: "scroll-by-xpath",
+  SCROLL_BY_SELECTOR: "scroll-by-selector",
+  SCROLL_BY_PIXEL: "scroll-by-pixel",
+  PRESS_KEYBOARD: "press-keyboard",
 };
 
 module.exports = {
@@ -31,5 +41,7 @@ module.exports = {
   STEP_VISIT_WEBSITE_WAIT_CONDITION,
   STEP_TYPE,
   STEP_WAIT_FOR_DISPLAY,
+  STEP_SCROLL_DIRECTION,
   STEP_CLICK_MOUSE_BUTTON,
+  KEY_DEFINITION,
 };

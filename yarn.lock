@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@medv/finder@^2.0.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@medv/finder/-/finder-2.1.0.tgz#5c53cdaac3b87057b9e5579ca1282b2397624016"
+  integrity sha512-Egrg5XO4kLol24b1Kv50HDfi5hW0yQ6aWSsO0Hea1eJ4rogKElIN0M86FdVnGF4XIGYyA7QWx0MgbOzVPA0qkA==
+
+puppeteer-element2selector@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/puppeteer-element2selector/-/puppeteer-element2selector-0.0.3.tgz#c51949dcd72aa98129c6284560ca9085fcafd62e"
+  integrity sha512-HgjLYDY3Ni67nDYEEE4hqJIoVEjwFeTXCO92tkJjYJKLbGNgM5/Zsa6ubaeYQ2fzGx10xZoejdUxlQnGuTbQ0g==
+  dependencies:
+    "@medv/finder" "^2.0.0"
+
 random-number-in-range@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/random-number-in-range/-/random-number-in-range-1.0.2.tgz#f38363080ff883104b757f27ae7936de28bbfe8e"
