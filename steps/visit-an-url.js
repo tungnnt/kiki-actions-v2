@@ -19,8 +19,6 @@ module.exports = async ({ page, options }) => {
   )
     throw new Error("VISIT_WEBSITE.WAIT_CONDITION.INVALID");
 
-  if (!(await page.isClosed())) throw new Error("VISIT_WEBSITE.PAGE.NOT_EXIST");
-
   await page.goto(options?.url, {
     timeout: parseInt(options.timeOut),
     waitUntil: options.waitCondition,

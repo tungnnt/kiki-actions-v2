@@ -3,8 +3,9 @@ const {
   BROWSER_MIN_TABS_OPEN_AMOUNT,
   BROWSER_MAX_TABS_OPEN_AMOUNT,
   STEP_TYPE,
+  DELAY_AFTER_HANDLE_TAB,
 } = require("../const/step-config");
-const validator = require("validator");
+const delayForTime = require("../helpers/delay-for-time");
 
 module.exports = async ({ browser, options }) => {
   if (!validator.equals(options?.type, STEP_TYPE["SWICTH_TAB"]))
@@ -28,4 +29,8 @@ module.exports = async ({ browser, options }) => {
   if (tabIndex > pages?.length) throw new Error("SWITCH_TAB.TAB.NOT_FOUND");
 
   await pages[tabIndex - 1].bringToFront();
+
+  await delayForTime(DELAY_AFTER_HANDLE_TAB);
+
+  return pages[tabIndex - 1];
 };

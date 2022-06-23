@@ -12,8 +12,8 @@ module.exports = async ({ page, options }) => {
   )
     throw new Error("WAIT_FOR.DURATION.INVALID");
 
-  const minDuration = options.minDuration,
-    maxDuration = options.maxDuration;
+  const minDuration = parseInt(options.minDuration),
+    maxDuration = parseInt(options.maxDuration);
 
   if (minDuration > maxDuration) throw new Error("WAIT_FOR.DURATION.INVALID");
 

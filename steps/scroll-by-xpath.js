@@ -1,5 +1,5 @@
 const validator = require("validator");
-const { STEP_TYPE } = require("../const/step-config");
+const { STEP_TYPE, BOOLEAN_ENUMS } = require("../const/step-config");
 const { element2selector } = require("puppeteer-element2selector");
 
 module.exports = async ({ page, options }) => {
@@ -8,11 +8,20 @@ module.exports = async ({ page, options }) => {
 
   const elements = await page.$x(options?.xpath);
 
-  if (typeof options?.ignoreIfNotFound !== "boolean")
+  if (
+    !(
+      typeof options?.ignoreIfNotFound === "boolean" ||
+      validator.isIn(options?.ignoreIfNotFound, Object.values(BOOLEAN_ENUMS))
+    )
+  )
     throw new Error("SCROLL_XPATH.IGNORE_CONFIG.INVALID");
 
   if (!Array.isArray(elements) || elements.length === 0) {
-    if (options.ignoreIfNotFound === true) return;
+    if (
+      options.ignoreIfNotFound === true ||
+      validator.equals(options?.ignoreIfNotFound, BOOLEAN_ENUMS["TRUE"])
+    )
+      return;
     throw new Error("SCROLL_XPATH.ELEMENT.NOT_FOUND");
   }
 

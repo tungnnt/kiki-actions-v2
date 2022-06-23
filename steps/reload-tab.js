@@ -16,8 +16,6 @@ module.exports = async ({ page, options }) => {
   )
     throw new Error("RELOAD_TAB.WAIT_CONDITION.INVALID");
 
-  if (!(await page.isClosed())) throw new Error("RELOAD_TAB.PAGE.NOT_EXIST");
-
   await page.reload({
     timeout: parseInt(options.timeOut),
     waitUntil: options.waitCondition,

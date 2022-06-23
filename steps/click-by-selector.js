@@ -1,5 +1,9 @@
 const validator = require("validator");
-const { STEP_TYPE, STEP_CLICK_MOUSE_BUTTON } = require("../const/step-config");
+const {
+  STEP_TYPE,
+  STEP_CLICK_MOUSE_BUTTON,
+  BOOLEAN_ENUMS,
+} = require("../const/step-config");
 const randomInRange = require("random-number-in-range");
 
 module.exports = async ({ page, options }) => {
@@ -8,11 +12,20 @@ module.exports = async ({ page, options }) => {
 
   const elements = await page.$$(options?.selector);
 
-  if (typeof options?.ignoreIfNotFound !== "boolean")
+  if (
+    !(
+      typeof options?.ignoreIfNotFound === "boolean" ||
+      validator.isIn(options?.ignoreIfNotFound, Object.values(BOOLEAN_ENUMS))
+    )
+  )
     throw new Error("CLICK_SELECTOR.IGNORE_CONFIG.INVALID");
 
   if (!Array.isArray(elements) || elements.length === 0) {
-    if (options.ignoreIfNotFound === true) return;
+    if (
+      options.ignoreIfNotFound === true ||
+      validator.equals(options?.ignoreIfNotFound, BOOLEAN_ENUMS["TRUE"])
+    )
+      return;
     throw new Error("CLICK_SELECTOR.ELEMENT.NOT_FOUND");
   }
 
@@ -44,14 +57,8 @@ module.exports = async ({ page, options }) => {
     clickCount: parseInt(options.clickCount),
     delay: parseInt(options.clickDelay),
     offset: {
-      x: randomInRange(
-        elementBoundingBox.x,
-        elementBoundingBox.x + elementBoundingBox.width
-      ),
-      y: randomInRange(
-        elementBoundingBox.y,
-        elementBoundingBox.y + elementBoundingBox.height
-      ),
+      x: randomInRange(0, elementBoundingBox.width),
+      y: randomInRange(0, elementBoundingBox.height),
     },
   });
 };

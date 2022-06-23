@@ -6,9 +6,10 @@ const scrollByXpath = require("./scroll-by-xpath");
 const scrollBySelector = require("./scroll-by-selector");
 
 const openNewTab = require("./open-a-new-tab");
-const closeCurrentTab = require("./close-a-current-tab");
+const closeCurrentTab = require("./close-a-tab");
 const switchTab = require("./switch-to-another-tab");
 const reloadTab = require("./reload-tab");
+const visitAnURL = require("./visit-an-url");
 
 const typeBySelector = require("./type-by-selector");
 const typeByXpath = require("./type-by-xpath");
@@ -34,4 +35,5 @@ module.exports = {
   waitForXpath,
   waitForSelector,
   waitForDuration,
+  visitAnURL,
 };

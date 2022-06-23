@@ -30,7 +30,7 @@ module.exports = async ({ page, options }) => {
   let distance = randomInRange(minDistance, maxDistance);
 
   distance =
-    options.direction === STEP_SCROLL_DIRECTION["UP"] ? distance : -distance;
+    options.direction === STEP_SCROLL_DIRECTION["UP"] ? -distance : distance;
 
   await page.evaluate((_distance) => {
     window.scrollBy({

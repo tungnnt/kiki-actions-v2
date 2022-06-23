@@ -1,0 +1,364 @@
+[
+  {
+    "options": {
+      "loop": { "min": 1, "max": 1 },
+      "random": false
+    },
+    "name": "Liệt kê mục đích của section",
+    "sections": [
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "scroll-by-xpath",
+              "xpath": "//input[@type='search']",
+              "ignoreIfNotFound": "true",
+              "elementIndex": "1"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "visit-an-url",
+              "url": "https://www.google.com/",
+              "timeOut": "60000",
+              "waitCondition": "domcontentloaded"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "open-a-new-tab"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "open-a-new-tab"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "switch-tab",
+              "tabIndex": "1"
+            },
+            "name": "Switch tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "switch-tab",
+              "tabIndex": "2"
+            },
+            "name": "Switch tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "reload-tab",
+              "timeOut": "60000",
+              "waitCondition": "domcontentloaded"
+            },
+            "name": "Switch tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "switch-tab",
+              "tabIndex": "3"
+            },
+            "name": "Switch tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "close-a-tab",
+              "tabIndex": "3"
+            },
+            "name": "Close tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "visit-an-url",
+              "url": "https://example.com/",
+              "timeOut": "60000",
+              "waitCondition": "domcontentloaded"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "close-a-tab",
+              "tabIndex": "1"
+            },
+            "name": "Close tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "close-a-tab",
+              "tabIndex": "1"
+            },
+            "name": "Close tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "visit-an-url",
+              "url": "https://unsplash.com/",
+              "timeOut": "60000",
+              "waitCondition": "domcontentloaded"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "scroll-by-pixel",
+              "direction": "down",
+              "minDistance": "200",
+              "maxDistance": "300"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "wait-for-duration",
+              "minDuration": "1000",
+              "maxDuration": "2000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "scroll-by-pixel",
+              "direction": "down",
+              "minDistance": "5000",
+              "maxDistance": "6000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "wait-for-duration",
+              "minDuration": "2000",
+              "maxDuration": "3000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "scroll-by-pixel",
+              "direction": "up",
+              "minDistance": "1000",
+              "maxDistance": "1500"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "wait-for-duration",
+              "minDuration": "3000",
+              "maxDuration": "4000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "scroll-by-xpath",
+              "xpath": "//input[@type='search']",
+              "ignoreIfNotFound": "true",
+              "elementIndex": "2"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "type-by-xpath",
+              "xpath": "//input[@type='search']",
+              "ignoreIfNotFound": "true",
+              "elementIndex": "2",
+              "content": "gang",
+              "typingDelay": "100"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "press-keyboard",
+              "key": "Enter"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "wait-for-duration",
+              "minDuration": "2000",
+              "maxDuration": "3000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "click-by-xpath",
+              "xpath": "//div[@data-test='search-route']//a//img[@loading='eager']",
+              "ignoreIfNotFound": "true",
+              "elementIndex": "10",
+              "mouseButton": "left",
+              "clickCount": "1",
+              "clickDelay": "100"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "wait-for-duration",
+              "minDuration": "2000",
+              "maxDuration": "3000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "switch-tab",
+              "tabIndex": "2"
+            },
+            "name": "Switch tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "close-a-tab",
+              "tabIndex": "2"
+            },
+            "name": "Close tab"
+          }
+        ]
+      }
+    ]
+  }
+]
