@@ -34,8 +34,10 @@ module.exports = async ({ page, options }) => {
 
   let elementIndex = parseInt(options.elementIndex - 1);
 
-  elementIndex = Math.min(elementIndex, 0);
-  elementIndex = Math.max(elementIndex, elements.length - 1);
+  elementIndex = elementIndex < 0 ? 0 : elementIndex;
+
+  elementIndex =
+    elementIndex > elements.length - 1 ? elements.length - 1 : elementIndex;
 
   if (!validator.isIn(options?.mouseButton, STEP_CLICK_MOUSE_BUTTON))
     throw new Error("CLICK_XPATH.MOUSE_BUTTON.INVALID");

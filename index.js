@@ -5,6 +5,8 @@ const { STEP_TYPE } = require("./const/step-config");
 const STEPS = require("./steps");
 
 let currentPage;
+let scriptVariables = {};
+let variableConfig;
 
 setImmediate(async () => {
   const userDataDir = `${__dirname}/profile`;
@@ -120,6 +122,68 @@ const _handleStep = async ({ browser, page, options }) => {
         page,
         options,
       });
+      break;
+
+    case STEP_TYPE["ASSIGN_VARIABLE_FROM_ELEMENT_TEXT_BY_XPATH"]:
+      variableConfig = await STEPS.assignVariableFromElementTextByXpath({
+        page,
+        options,
+      });
+
+      scriptVariables[`${variableConfig.variableName}`] = variableConfig.value;
+
+      console.log({ scriptVariables });
+
+      break;
+
+    case STEP_TYPE["ASSIGN_VARIABLE_FROM_ELEMENT_TEXT_BY_SELECTOR"]:
+      variableConfig = await STEPS.assignVariableFromElementTextBySelector({
+        page,
+        options,
+      });
+
+      scriptVariables[`${variableConfig.variableName}`] = variableConfig.value;
+
+      console.log({ scriptVariables });
+
+      break;
+
+    case STEP_TYPE["ASSIGN_VARIABLE_FROM_GG_SHEET"]:
+      variableConfig = await STEPS.assignVariableFromGoogleSheet({
+        options,
+      });
+
+      scriptVariables[`${variableConfig.variableName}`] = variableConfig.value;
+
+      console.log({ scriptVariables });
+
+      break;
+
+    case STEP_TYPE["IF_ELSE_CONDITION"]:
+      const compareResponse = await STEPS.compareCondition({
+        options: { ...scriptVariables, ...options },
+      });
+
+      if (compareResponse.isSatisfied) {
+        console.log("Condition is satisfied");
+        for (const step of compareResponse.stepsIfSatisfyCondition) {
+          await _handleStep({
+            browser,
+            page: currentPage,
+            options: step.options,
+          });
+        }
+      } else {
+        console.log("Condition is not satisfied");
+        for (const step of compareResponse.stepsIfSatisfyCondition) {
+          await _handleStep({
+            browser,
+            page: currentPage,
+            options: step.options,
+          });
+        }
+      }
+
       break;
 
     default:

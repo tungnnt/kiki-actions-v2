@@ -18,9 +18,19 @@ const STEP_SCROLL_DIRECTION = { UP: "up", DOWN: "down" };
 
 const KEY_DEFINITION = require("./key");
 
-const VARIABLE_TYPE = { GOOGLE_SHEET: "google-sheeet-variable" };
+const VARIABLE_TYPE = {
+  GOOGLE_SHEET: "google-sheeet-variable",
+  ELEMENT: "element",
+  ELEMENT_TEXT: "element-text",
+};
 
 const BOOLEAN_ENUMS = { TRUE: "true", FALSE: "false" };
+
+const COMPARATOR = {
+  EQUAL: "equal",
+  INCLUDE: "include",
+  NOT_INCLUDE: "not-include",
+};
 
 const STEP_TYPE = {
   VISIT_AN_URL: "visit-an-url",
@@ -40,6 +50,11 @@ const STEP_TYPE = {
   SCROLL_BY_PIXEL: "scroll-by-pixel",
   PRESS_KEYBOARD: "press-keyboard",
   ASSIGN_VARIABLE_FROM_GG_SHEET: "assign-variable-from-gg-sheet",
+  ASSIGN_VARIABLE_FROM_ELEMENT_TEXT_BY_XPATH:
+    "assign-variable-from-element-text-by-xpath",
+  ASSIGN_VARIABLE_FROM_ELEMENT_TEXT_BY_SELECTOR:
+    "assign-variable-from-element-text-by-selector",
+  IF_ELSE_CONDITION: "if-else-condition",
 };
 
 module.exports = {
@@ -54,4 +69,5 @@ module.exports = {
   VARIABLE_TYPE,
   DELAY_AFTER_HANDLE_TAB,
   BOOLEAN_ENUMS,
+  COMPARATOR,
 };

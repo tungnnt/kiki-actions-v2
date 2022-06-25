@@ -269,6 +269,19 @@
         "steps": [
           {
             "options": {
+              "type": "wait-for-duration",
+              "minDuration": "2000",
+              "maxDuration": "3000"
+            },
+            "name": "Open a new tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
               "type": "type-by-xpath",
               "xpath": "//input[@type='search']",
               "ignoreIfNotFound": "true",
@@ -356,6 +369,80 @@
               "tabIndex": "2"
             },
             "name": "Close tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "assign-variable-from-element-text-by-xpath",
+              "variableName": "image_name",
+              "xpath": "//figure[@itemprop='image']",
+              "ignoreIfNotFound": "true",
+              "elementIndex": "2"
+            },
+            "name": "Close tab"
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "page": 1,
+            "options": {
+              "type": "assign-variable-from-gg-sheet",
+              "variableName": "links",
+              "fromRowIndex": "1",
+              "toRowIndex": "5",
+              "columnIndex": "2",
+              "sheetIndex": "2",
+              "sheetID": "1-WAHw2tvnln9uTZGvb3u8TGmWeCi0sDwbHbDjFqjhI4"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "if-else-condition",
+              "stepsIfSatisfyCondition": [
+                {
+                  "options": {
+                    "type": "scroll-by-pixel",
+                    "direction": "down",
+                    "minDistance": "200",
+                    "maxDistance": "300"
+                  },
+                  "name": "Open a new tab"
+                },
+                {
+                  "options": {
+                    "type": "wait-for-duration",
+                    "minDuration": "1000",
+                    "maxDuration": "2000"
+                  },
+                  "name": "Open a new tab"
+                },
+                {
+                  "options": {
+                    "type": "scroll-by-pixel",
+                    "direction": "down",
+                    "minDistance": "200",
+                    "maxDistance": "300"
+                  },
+                  "name": "Open a new tab"
+                }
+              ],
+              "stepsIfNotSatisfyCondition": [],
+              "variableName": "image_name",
+              "comparator": "equal",
+              "compareValue": "David BenešAvailable for hirebalaclava chain ak47"
+            }
           }
         ]
       }

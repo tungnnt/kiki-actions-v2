@@ -19,6 +19,12 @@ const waitForXpath = require("./wait-for-xpath");
 const waitForSelector = require("./wait-for-selector");
 const waitForDuration = require("./wait-for-a-duration");
 
+const assignVariableFromElementTextByXpath = require("../flow-controllers/assign-variable-from-element-text-by-xpath");
+const assignVariableFromElementTextBySelector = require("../flow-controllers/assign-variable-from-element-text-by-selector");
+const assignVariableFromGoogleSheet = require("../flow-controllers/assign-variable-from-gg-sheet");
+
+const compareCondition = require("../flow-controllers/if-else-condition");
+
 module.exports = {
   clickBySelector,
   clickByXpath,
@@ -36,4 +42,8 @@ module.exports = {
   waitForSelector,
   waitForDuration,
   visitAnURL,
+  assignVariableFromElementTextByXpath,
+  assignVariableFromElementTextBySelector,
+  assignVariableFromGoogleSheet,
+  compareCondition,
 };

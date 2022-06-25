@@ -46,9 +46,10 @@ module.exports = async ({ options }) => {
       .filter((value) => value);
 
     return {
-      variableName,
+      variableName: options.variableName,
       value: rowContents,
       variableType: VARIABLE_TYPE["GOOGLE_SHEET"],
+      isArray: true,
     };
   } catch (error) {
     throw new Error(`GG_SHEET_VARIABLE.VALUE.${error.message}`);
