@@ -22,6 +22,7 @@ const VARIABLE_TYPE = {
   GOOGLE_SHEET: "google-sheeet-variable",
   ELEMENT: "element",
   ELEMENT_TEXT: "element-text",
+  MANUAL_TEXT: "manual-text",
 };
 
 const BOOLEAN_ENUMS = { TRUE: "true", FALSE: "false" };
@@ -54,7 +55,9 @@ const STEP_TYPE = {
     "assign-variable-from-element-text-by-xpath",
   ASSIGN_VARIABLE_FROM_ELEMENT_TEXT_BY_SELECTOR:
     "assign-variable-from-element-text-by-selector",
+  ASSIGN_VARIABLE_FROM_MANUAL_TEXT: "assign-variable-from-manual-text",
   IF_ELSE_CONDITION: "if-else-condition",
+  LOOP_BY_COUNT: "loop-by-count",
 };
 
 module.exports = {

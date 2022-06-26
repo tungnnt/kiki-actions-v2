@@ -55,18 +55,3 @@ module.exports = async ({ options }) => {
     throw new Error(`GG_SHEET_VARIABLE.VALUE.${error.message}`);
   }
 };
-
-// setImmediate(async () => {
-//   test({
-//     page: 1,
-//     options: {
-//       type: STEP_TYPE["ASSIGN_VARIABLE_FROM_GG_SHEET"],
-//       variableName: "links",
-//       fromRowIndex: "1",
-//       toRowIndex: "5",
-//       columnIndex: "2",
-//       sheetIndex: "2",
-//       sheetID: "1-WAHw2tvnln9uTZGvb3u8TGmWeCi0sDwbHbDjFqjhI4",
-//     },
-//   });
-// });

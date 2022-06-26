@@ -445,6 +445,78 @@
             }
           }
         ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "page": 1,
+            "options": {
+              "type": "assign-variable-from-manual-text",
+              "variableName": "loop_count",
+              "value": ["5"]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Truy cập trang fb",
+        "steps": [
+          {
+            "options": {
+              "type": "loop-by-count",
+              "countVariableName": "loop_count",
+              "indexVariableName": "loop_index",
+              "steps": [
+                {
+                  "options": {
+                    "type": "scroll-by-pixel",
+                    "direction": "down",
+                    "minDistance": "200",
+                    "maxDistance": "300"
+                  },
+                  "name": "Open a new tab"
+                },
+                {
+                  "options": {
+                    "type": "wait-for-duration",
+                    "minDuration": "1000",
+                    "maxDuration": "2000"
+                  },
+                  "name": "Open a new tab"
+                },
+                {
+                  "options": {
+                    "type": "if-else-condition",
+                    "stepsIfSatisfyCondition": [
+                      {
+                        "options": {
+                          "type": "scroll-by-pixel",
+                          "direction": "up",
+                          "minDistance": "1500",
+                          "maxDistance": "1500"
+                        },
+                        "name": "Open a new tab"
+                      },
+                      {
+                        "options": {
+                          "type": "wait-for-duration",
+                          "minDuration": "4000",
+                          "maxDuration": "5000"
+                        },
+                        "name": "Open a new tab"
+                      }
+                    ],
+                    "stepsIfNotSatisfyCondition": [],
+                    "variableName": "loop_index",
+                    "comparator": "equal",
+                    "compareValue": "4"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     ]
   }

@@ -169,16 +169,52 @@ const _handleStep = async ({ browser, page, options }) => {
         for (const step of compareResponse.stepsIfSatisfyCondition) {
           await _handleStep({
             browser,
-            page: currentPage,
+            page,
             options: step.options,
           });
         }
       } else {
         console.log("Condition is not satisfied");
-        for (const step of compareResponse.stepsIfSatisfyCondition) {
+        for (const step of compareResponse.stepsIfNotSatisfyCondition) {
           await _handleStep({
             browser,
-            page: currentPage,
+            page,
+            options: step.options,
+          });
+        }
+      }
+
+      break;
+
+    case STEP_TYPE["ASSIGN_VARIABLE_FROM_MANUAL_TEXT"]:
+      variableConfig = await STEPS.assignVariableFromManualText({
+        options,
+      });
+
+      scriptVariables[`${variableConfig.variableName}`] = variableConfig.value;
+
+      console.log({ scriptVariables });
+
+      break;
+
+    case STEP_TYPE["LOOP_BY_COUNT"]:
+      const loopByCountConfig = await STEPS.loopByCount({
+        options: { ...scriptVariables, ...options },
+      });
+
+      console.log({ loopByCountConfig });
+
+      for (const [index] of [
+        ...Array(loopByCountConfig.loopCount).keys(),
+      ].entries()) {
+        scriptVariables[`${loopByCountConfig.indexVariableName}`] = index + 1;
+
+        console.log({ scriptVariables });
+
+        for (const step of loopByCountConfig.steps) {
+          await _handleStep({
+            browser,
+            page,
             options: step.options,
           });
         }

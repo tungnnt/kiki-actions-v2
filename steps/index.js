@@ -22,8 +22,11 @@ const waitForDuration = require("./wait-for-a-duration");
 const assignVariableFromElementTextByXpath = require("../flow-controllers/assign-variable-from-element-text-by-xpath");
 const assignVariableFromElementTextBySelector = require("../flow-controllers/assign-variable-from-element-text-by-selector");
 const assignVariableFromGoogleSheet = require("../flow-controllers/assign-variable-from-gg-sheet");
+const assignVariableFromManualText = require("../flow-controllers/assign-variable-from-manual-text");
 
 const compareCondition = require("../flow-controllers/if-else-condition");
+
+const loopByCount = require("../flow-controllers/loop-by-count");
 
 module.exports = {
   clickBySelector,
@@ -46,4 +49,6 @@ module.exports = {
   assignVariableFromElementTextBySelector,
   assignVariableFromGoogleSheet,
   compareCondition,
+  loopByCount,
+  assignVariableFromManualText,
 };
