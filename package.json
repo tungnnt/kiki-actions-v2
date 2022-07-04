@@ -2,9 +2,31 @@
   "name": "kiki-actions-v2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "bin": "./bin/www",
+  "pkg": {
+    "scripts": [
+      "flow-controllers/**/*.js",
+      "helpers/**/*.js",
+      "steps/**/*.js",
+      "automation.js",
+      "app.js"
+    ],
+    "assets": [
+      "*.txt",
+      "node_modules/**/*",
+      "scripts/*.json",
+      "profile/*",
+      "const/*"
+    ],
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "release"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +34,16 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
     "ghost-cursor": "^1.1.11",
     "google-spreadsheet": "^3.3.0",
-    "puppeteer": "^15.0.0",
+    "morgan": "^1.10.0",
+    "puppeteer-core": "^15.3.0",
     "puppeteer-element2selector": "^0.0.3",
     "random-number-in-range": "^1.0.2",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "debug": "~2.6.9"
   }
 }

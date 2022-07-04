@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const child_process = require("child_process");
 const { waitForDebugger } = require("./helpers/wait-for-chrome-debugger");
 const { STEP_TYPE } = require("./const/step-config");
@@ -8,10 +8,10 @@ let currentPage;
 let scriptVariables = {};
 let variableConfig;
 
-setImmediate(async () => {
-  const userDataDir = `${__dirname}/profile`;
-  const browser = await _initBrowserViaExecutionPath({
-    userDataDir,
+module.exports = async ({ webSocketDebuggerUrl }) => {
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: webSocketDebuggerUrl,
+    defaultViewport: null,
   });
 
   const blocks = require("./scripts/script-01.json");
@@ -29,7 +29,7 @@ setImmediate(async () => {
       }
     }
   }
-});
+};
 
 const _handleStep = async ({ browser, page, options }) => {
   switch (options.type) {
